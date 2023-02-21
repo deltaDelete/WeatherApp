@@ -33,6 +33,9 @@
             this.measureUnitsBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.resetButton = new System.Windows.Forms.Button();
+            this.onlyPositive = new System.Windows.Forms.Button();
+            this.sortButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.WeatherDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +64,7 @@
             this.measureUnitsBox.Name = "measureUnitsBox";
             this.measureUnitsBox.Size = new System.Drawing.Size(121, 21);
             this.measureUnitsBox.TabIndex = 2;
+            this.measureUnitsBox.SelectedValueChanged += new System.EventHandler(this.measureUnitsBox_SelectedChanged);
             // 
             // label1
             // 
@@ -80,12 +84,45 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Ед.измерения";
             // 
+            // resetButton
+            // 
+            this.resetButton.Location = new System.Drawing.Point(103, 296);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(75, 23);
+            this.resetButton.TabIndex = 4;
+            this.resetButton.Text = "Сброс";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            // 
+            // onlyPositive
+            // 
+            this.onlyPositive.Location = new System.Drawing.Point(103, 267);
+            this.onlyPositive.Name = "onlyPositive";
+            this.onlyPositive.Size = new System.Drawing.Size(75, 23);
+            this.onlyPositive.TabIndex = 5;
+            this.onlyPositive.Text = "Вывод \"+\"";
+            this.onlyPositive.UseVisualStyleBackColor = true;
+            this.onlyPositive.Click += new System.EventHandler(this.onlyPositive_Click);
+            // 
+            // sortButton
+            // 
+            this.sortButton.Location = new System.Drawing.Point(103, 326);
+            this.sortButton.Name = "sortButton";
+            this.sortButton.Size = new System.Drawing.Size(75, 23);
+            this.sortButton.TabIndex = 6;
+            this.sortButton.Text = "Сортировка";
+            this.sortButton.UseVisualStyleBackColor = true;
+            this.sortButton.Click += new System.EventHandler(this.sortButton_Click);
+            // 
             // WeatherForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.sortButton);
+            this.Controls.Add(this.onlyPositive);
+            this.Controls.Add(this.resetButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.label2);
@@ -107,6 +144,9 @@
         private System.Windows.Forms.ComboBox measureUnitsBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button resetButton;
+        private System.Windows.Forms.Button onlyPositive;
+        private System.Windows.Forms.Button sortButton;
     }
 }
 
